@@ -49,13 +49,11 @@ func diceFun(command *bot.Cmd) (msg string, err error) {
 			result := rand.Int()%m + 1
 			diceResult += result
 			submsg = strings.Join([]string{submsg, fmt.Sprintf("%d", result)}, "")
-			fmt.Printf("[Debug] %v %s", result, submsg)
 			if n > 1 {
 				for i := 1; i < n; i++ {
 					result := rand.Int()%m + 1
 					diceResult += result
-					fmt.Printf("[Debug] %v %s", result, submsg)
-					submsg = strings.Join([]string{submsg, string(result)}, "+")
+					submsg = strings.Join([]string{submsg, fmt.Sprintf("%d", result)}, "+")
 				}
 				submsg = strings.Join([]string{submsg, ")"}, "")
 			}
@@ -67,6 +65,8 @@ func diceFun(command *bot.Cmd) (msg string, err error) {
 
 		if index > 0 {
 			msgBody = strings.Join([]string{msgBody, submsg}, "+")
+		} else {
+			msgBody = strings.Join([]string{msgBody, submsg}, "")
 		}
 	}
 
