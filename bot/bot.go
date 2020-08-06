@@ -6,6 +6,7 @@ import (
 
 	"github.com/NeapolitanIcecream/bot/slack"
 	_ "github.com/NeapolitanIcecream/go-plugins/dice"
+	_ "github.com/go-chat-bot/plugins/catgif"
 )
 
 func main() {
