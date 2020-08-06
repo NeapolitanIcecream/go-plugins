@@ -3,7 +3,7 @@ package dice
 import (
 	"fmt"
 
-	"github.com/go-chat-bot/bot"
+	"github.com/NeapolitanIcecream/bot"
 )
 
 func hello(command *bot.Cmd) (msg string, err error) {
