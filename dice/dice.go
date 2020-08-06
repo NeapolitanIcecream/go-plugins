@@ -12,6 +12,8 @@ func hello(command *bot.Cmd) (msg string, err error) {
 }
 
 func init() {
+	fmt.Println("[Debug] 0-0")
+
 	bot.RegisterCommand(
 		"hello",
 		"Sends a 'Hello' message to you on the channel.",
