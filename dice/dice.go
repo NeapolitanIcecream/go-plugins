@@ -12,7 +12,7 @@ func hello(command *bot.Cmd) (msg string, err error) {
 }
 
 func init() {
-	fmt.Println("[Debug] 0-0")
+	fmt.Println("[Debug] Plugin \"dice\" loaded.")
 
 	bot.RegisterCommand(
 		"hello",
