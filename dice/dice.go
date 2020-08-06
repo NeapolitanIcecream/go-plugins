@@ -48,6 +48,7 @@ func diceFun(command *bot.Cmd) (msg string, err error) {
 			}
 			result := rand.Int()%m + 1
 			diceResult += result
+			fmt.Printf("[Debug] n=%v, m=%v, result=%v\n", n, m, result)
 			submsg = strings.Join([]string{submsg, string(result)}, "")
 			if n > 1 {
 				for i := 1; i < n; i++ {
