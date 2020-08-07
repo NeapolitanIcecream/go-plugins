@@ -17,6 +17,10 @@ func diceFun(command *bot.Cmd) (msg string, err error) {
 	msgBody := ""
 	diceResult := 0
 	dices := strings.Split(message, "+")
+	if len(dices) > 100 {
+		msg = errorMessage
+		return
+	}
 
 	for index, dice := range dices {
 		numbers := strings.Split(strings.TrimSpace(dice), "d")
@@ -34,7 +38,7 @@ func diceFun(command *bot.Cmd) (msg string, err error) {
 
 		case 2:
 			n, e := strconv.Atoi(numbers[0])
-			if e != nil {
+			if e != nil || n > 50 {
 				msg = errorMessage
 				return
 			}
@@ -42,7 +46,7 @@ func diceFun(command *bot.Cmd) (msg string, err error) {
 				submsg = strings.Join([]string{submsg, "("}, "")
 			}
 			m, e := strconv.Atoi(numbers[1])
-			if e != nil {
+			if e != nil || m > 1000 {
 				msg = errorMessage
 				return
 			}
